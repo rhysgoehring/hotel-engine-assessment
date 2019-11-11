@@ -14,7 +14,8 @@ module.exports = {
     rules: {
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "no-console": "off",
     },
     env: {
         browser: true,
