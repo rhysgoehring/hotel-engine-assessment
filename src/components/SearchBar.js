@@ -14,7 +14,7 @@ const SearchInput = styled.input`
   color: black;
   font-size: 1.5rem;
   flex: 1 1 75%;
-  border: 2px solid black;
+  border: 2px solid darkslategrey;
 `;
 
 const SearchButton = styled.button`
@@ -26,10 +26,10 @@ const SearchButton = styled.button`
   font-size: 1.5rem;
   transition: all 0.5s ease;
   flex: 1 1 20%;
-  border: 2px solid black;
+  border: 2px solid darkslategrey;
 
   &:hover {
-    background: black;
+    background: darkslategrey;
     color: white;
   }
 `;
