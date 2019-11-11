@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import SearchBar from './components/SearchBar';
 
 const Header = styled.header`
@@ -18,9 +19,20 @@ const Heading = styled.h1`
 
 function App() {
   const [query, setQuery] = useState('');
+
+  const fetchRepo = async () => {
+    try {
+      const response = await axios.get('/api/test');
+      console.log('response', response);
+    } catch (error) {
+      console.log('error fetching repo', error);
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('query', query);
+    fetchRepo();
   }
   return (
     <>
