@@ -25,7 +25,6 @@ function App() {
   const fetchRepo = async searchTerm => {
     try {
       const { data } = await axios.post('/api/search', { searchTerm });
-      console.log('response', data);
       setRepos(data);
     } catch (error) {
       console.log('error fetching repo', error);
