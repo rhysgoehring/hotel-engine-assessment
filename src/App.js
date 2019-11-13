@@ -34,7 +34,6 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('query', query);
     fetchRepo(query);
   }
 
