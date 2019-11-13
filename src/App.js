@@ -21,9 +21,9 @@ const Heading = styled.h1`
 function App() {
   const [query, setQuery] = useState('');
 
-  const fetchRepo = async () => {
+  const fetchRepo = async searchTerm => {
     try {
-      const response = await axios.get('/api/test');
+      const response = await axios.post('/api/search', { searchTerm });
       console.log('response', response);
     } catch (error) {
       console.log('error fetching repo', error);
@@ -33,7 +33,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('query', query);
-    fetchRepo();
+    fetchRepo(query);
   }
 
   const renderTableData = () => {
@@ -49,7 +49,7 @@ function App() {
         handleFormSubmit={handleSubmit}
         handleInputChange={(e) => setQuery(e.target.value)}
       />
-      <ResultTable tableData={renderTableData} />
+      <ResultTable tableData={renderTableData()} />
     </>
 
   );
