@@ -37,7 +37,7 @@ function App() {
   }
 
   const renderTableData = () => {
-    return repos.map(repo => (
+    return repos && repos.map(repo => (
     <tr key={repo.id}>
       <td>{repo.name}</td>
       <td>{repo.score}</td>

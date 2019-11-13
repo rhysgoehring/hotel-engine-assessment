@@ -1,17 +1,19 @@
 const express =  require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const memoryCacheMiddleware = require('./memoryCacheMiddleware');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.post('/api/search', async (req, res) => {
+app.post('/api/search', memoryCacheMiddleware, async (req, res) => {
   let response;
   try {
     const query = req.body.searchTerm;
     const result = await axios.get(`https://api.github.com/search/repositories?q=${query}`);
+    console.log('calling github api');
     const { items } = result.data;
     response = items;
   } catch (e) {
