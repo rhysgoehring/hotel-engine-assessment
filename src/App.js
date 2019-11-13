@@ -35,6 +35,11 @@ function App() {
     console.log('query', query);
     fetchRepo();
   }
+
+  const renderTableData = () => {
+    return null;
+  }
+
   return (
     <>
       <Header>
@@ -44,7 +49,7 @@ function App() {
         handleFormSubmit={handleSubmit}
         handleInputChange={(e) => setQuery(e.target.value)}
       />
-      <ResultTable />
+      <ResultTable tableData={renderTableData} />
     </>
 
   );
