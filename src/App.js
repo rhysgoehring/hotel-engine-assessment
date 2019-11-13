@@ -20,11 +20,13 @@ const Heading = styled.h1`
 
 function App() {
   const [query, setQuery] = useState('');
+  const [repos, setRepos] = useState([]);
 
   const fetchRepo = async searchTerm => {
     try {
-      const response = await axios.post('/api/search', { searchTerm });
-      console.log('response', response);
+      const { data } = await axios.post('/api/search', { searchTerm });
+      console.log('response', data);
+      setRepos(data);
     } catch (error) {
       console.log('error fetching repo', error);
     }
@@ -37,7 +39,16 @@ function App() {
   }
 
   const renderTableData = () => {
-    return null;
+    return repos.map(repo => (
+    <tr key={repo.id}>
+      <td>{repo.name}</td>
+      <td>{repo.score}</td>
+      <td>{repo.stargazers_count}</td>
+      <td>{repo.language}</td>
+      <td>{repo.owner.login}</td>
+      <td>{repo.description}</td>
+    </tr>
+    ));
   }
 
   return (

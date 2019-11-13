@@ -16,6 +16,7 @@ const ResultTable = ({ tableData }) => {
       <tbody>
         <tr>
           <th>Repo Name</th>
+          <th>Score</th>
           <th># of Stars</th>
           <th>Language</th>
           <th>Owner</th>
