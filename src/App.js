@@ -49,6 +49,16 @@ function App() {
     ));
   }
 
+  const handleSort = field => {
+    const sortedData = repos.slice().sort((a, b) => {
+      if (a[field] > b[field]) return -1;
+      if (a[field] < b[field]) return 1;
+      return 0;
+    });
+    setRepos(sortedData);
+  }
+
+
   return (
     <>
       <Header>
@@ -58,7 +68,10 @@ function App() {
         handleFormSubmit={handleSubmit}
         handleInputChange={(e) => setQuery(e.target.value)}
       />
-      <ResultTable tableData={renderTableData()} />
+      <ResultTable
+        tableData={renderTableData()}
+        sortBy={(field) => handleSort(field)}
+        />
     </>
 
   );
