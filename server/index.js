@@ -8,15 +8,17 @@ app.use(bodyParser.json());
 
 
 app.post('/api/search', async (req, res) => {
+  let response;
   try {
     const query = req.body.searchTerm;
-    const response = await axios.get(`https://api.github.com/search/repositories?q=${query}`);
-    const { items } = response.data;
-    return res.json(items);
+    const result = await axios.get(`https://api.github.com/search/repositories?q=${query}`);
+    const { items } = result.data;
+    response = items;
   } catch (e) {
     console.log("error finding repo", e);
+    response = { error: "No repositories found" };
   }
-  // res.json({ name: "Rhys", title: "Developer" });
+  return res.json(response);
 });
 
 app.listen(3001, () =>
