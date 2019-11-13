@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
+import ResultTable from './components/ResultTable';
 
 const Header = styled.header`
   text-align: center;
@@ -43,6 +44,7 @@ function App() {
         handleFormSubmit={handleSubmit}
         handleInputChange={(e) => setQuery(e.target.value)}
       />
+      <ResultTable />
     </>
 
   );
