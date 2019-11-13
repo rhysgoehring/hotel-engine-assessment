@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const TableContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Table = styled.table`
   text-align: center;
   border-collapse: collapse;
@@ -8,23 +13,34 @@ const Table = styled.table`
   width: 100%;
   margin: 0.75rem;
   padding: 0.5rem 0.5rem;
+  font-family: 'Helvetica Neue';
+  font-size: 1.5rem;
 `;
 
-const ResultTable = ({ tableData }) => {
+const SortButton = styled.button`
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+`;
+
+const ResultTable = ({ tableData, sortByScore, sortByStars }) => {
   return (
-    <Table>
-      <tbody>
-        <tr>
-          <th>Repo Name</th>
-          <th>Score</th>
-          <th># of Stars</th>
-          <th>Language</th>
-          <th>Owner</th>
-          <th>Description</th>
-        </tr>
-        {tableData}
-      </tbody>
-    </Table>
+    <TableContainer>
+      <Table>
+        <tbody>
+          <tr>
+            <th>Repo Name</th>
+            <th>Score <SortButton onClick={sortByScore}>{"\u25be"}</SortButton></th>
+            <th># of Stars <SortButton onClick={sortByStars}>{"\u25be"}</SortButton></th>
+            <th>Language</th>
+            <th>Owner</th>
+            <th>Description</th>
+          </tr>
+          {tableData}
+        </tbody>
+      </Table>
+    </TableContainer>
+
   );
 };
 
