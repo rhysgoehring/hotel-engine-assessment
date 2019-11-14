@@ -14,12 +14,14 @@
     "styled-components": "^4.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "react-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server/index.js",
-    "dev": "run-p server start"
+    "server-dev": "nodemon server/index.js",
+    "server": "node server/index.js",
+    "dev": "run-p server-dev react-start",
+    "start": "run-p server react-start"
   },
   "eslintConfig": {
     "extends": "react-app"
