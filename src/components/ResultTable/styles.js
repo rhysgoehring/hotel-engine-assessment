@@ -29,6 +29,11 @@ const TableHeaderRow = styled.tr`
 const TableRow = styled.tr`
   border-bottom: 1px solid darkslategrey;
   vertical-align: middle;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #ddd;
+  }
 `;
 
 const LeftAlignedCell = styled.td`
