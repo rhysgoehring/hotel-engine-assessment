@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import SearchBar from './components/SearchBar';
+import SearchBar from './components/SearchBar/index';
 import ResultTable from './components/ResultTable';
 
 const Header = styled.header`
