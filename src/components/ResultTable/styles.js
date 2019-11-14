@@ -12,7 +12,6 @@ const Table = styled.table`
   width: 100%;
   margin: 0.75rem;
   padding: 0.5rem 0.5rem;
-  font-family: 'Helvetica Neue';
 `;
 
 const SortButton = styled.button`
@@ -24,6 +23,7 @@ const SortButton = styled.button`
 const TableHeaderRow = styled.tr`
   border-bottom: 2px solid darkslategrey;
   vertical-align: middle;
+  font-family: 'Helvetica Neue';
 `;
 
 const TableRow = styled.tr`
