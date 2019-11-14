@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { PropTypes } from 'prop-types';
-import { TableContainer, Table, SortButton, TableHeaderRow, LeftAlignedCell } from './styles';
+import { TableContainer, Table, SortButton, TableHeaderRow, MinWidthTableHeader } from './styles';
 
-const MinWidthTableHeader = styled.th`
-  min-width: 100px;
-  text-align: left;
-`;
 
 const ResultTable = ({ tableData, sortBy }) => {
   return (
@@ -14,7 +9,7 @@ const ResultTable = ({ tableData, sortBy }) => {
       <Table>
         <tbody>
           <TableHeaderRow>
-            <th>Repo Name</th>
+            <MinWidthTableHeader>Repo Name</MinWidthTableHeader>
             <MinWidthTableHeader>Score<SortButton onClick={() => sortBy('score')}>{'\u25be'}</SortButton></MinWidthTableHeader>
             <MinWidthTableHeader># of Stars<SortButton onClick={() => sortBy('stargazers_count')}>{'\u25be'}</SortButton></MinWidthTableHeader>
             <th>Language</th>

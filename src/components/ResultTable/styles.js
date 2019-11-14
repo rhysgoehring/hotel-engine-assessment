@@ -24,16 +24,23 @@ const SortButton = styled.button`
 
 const TableHeaderRow = styled.tr`
   border-bottom: 2px solid darkslategrey;
-  padding: 2.5rem 2.5rem;
   vertical-align: middle;
 `;
 
 const TableRow = styled.tr`
   border-bottom: 1px solid darkslategrey;
+  vertical-align: middle;
 `;
 
 const LeftAlignedCell = styled.td`
   text-align: left;
+  padding: 1rem 1rem;
+`;
+
+const MinWidthTableHeader = styled.th`
+  min-width: 100px;
+  text-align: left;
+  padding: 1rem 1rem;
 `;
 
 export {
@@ -43,4 +50,5 @@ export {
   TableHeaderRow,
   TableRow,
   LeftAlignedCell,
-}
+  MinWidthTableHeader
+};

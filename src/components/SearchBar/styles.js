@@ -37,4 +37,4 @@ export {
   SearchBarWrapper,
   SearchInput,
   SearchButton
-}
+};
