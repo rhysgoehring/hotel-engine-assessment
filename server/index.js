@@ -13,11 +13,9 @@ app.post('/api/search', memoryCacheMiddleware, async (req, res) => {
   try {
     const query = req.body.searchTerm;
     const result = await axios.get(`https://api.github.com/search/repositories?q=${query}`);
-    console.log('calling github api');
     const { items } = result.data;
     response = items;
   } catch (e) {
-    console.log("error finding repo", e);
     response = { error: "No repositories found" };
   }
   return res.json(response);

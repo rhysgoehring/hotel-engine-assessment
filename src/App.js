@@ -73,7 +73,6 @@ function App() {
         sortBy={(field) => handleSort(field)}
         />
     </>
-
   );
 }
 
