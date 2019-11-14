@@ -22,8 +22,13 @@ const SortButton = styled.button`
   cursor: pointer;
 `;
 
+const TableHeaderRow = styled.tr`
+  border-bottom: 1px solid darkslategrey;
+`;
+
 export {
   TableContainer,
   Table,
-  SortButton
+  SortButton,
+  TableHeaderRow
 }

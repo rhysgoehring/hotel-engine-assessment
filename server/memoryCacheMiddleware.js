@@ -3,6 +3,7 @@ const mcache = require('memory-cache');
 const memCache = new mcache.Cache();
 
 const memoryCacheMiddleware = (req, res, next) => {
+  try {
     const key = `__hotelEngine__${req.body.searchTerm}`
     const cacheContent = memCache.get(key);
     if (cacheContent) {
@@ -15,6 +16,10 @@ const memoryCacheMiddleware = (req, res, next) => {
       }
       next();
     }
-}
+  } catch (e) {
+    console.log('memoryCacheMiddleware error', e);
+    next();
+  }
+};
 
 module.exports = memoryCacheMiddleware;
