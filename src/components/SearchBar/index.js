@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { SearchBarWrapper,SearchInput, SearchButton } from './styles';
 
 const SearchBar = ({ handleFormSubmit, handleInputChange }) => {
@@ -11,6 +12,11 @@ const SearchBar = ({ handleFormSubmit, handleInputChange }) => {
     </form>
 
   );
+};
+
+SearchBar.propTypes = {
+  handleFormSubmit: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired
 };
 
 export default SearchBar;
