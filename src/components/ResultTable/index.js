@@ -9,8 +9,8 @@ const ResultTable = ({ tableData, sortBy }) => {
         <tbody>
           <tr>
             <th>Repo Name</th>
-            <th>Score<SortButton onClick={() => sortBy("score")}>{"\u25be"}</SortButton></th>
-            <th style={{ minWidth: '100px' }}># of Stars<SortButton onClick={() => sortBy("stargazers_count")}>{"\u25be"}</SortButton></th>
+            <th>Score<SortButton onClick={() => sortBy('score')}>{'\u25be'}</SortButton></th>
+            <th style={{ minWidth: '100px' }}># of Stars<SortButton onClick={() => sortBy('stargazers_count')}>{'\u25be'}</SortButton></th>
             <th>Language</th>
             <th>Owner</th>
             <th>Description</th>

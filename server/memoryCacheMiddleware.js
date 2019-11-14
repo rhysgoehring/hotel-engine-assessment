@@ -1,4 +1,4 @@
-const mcache = require("memory-cache");
+const mcache = require('memory-cache');
 
 const memCache = new mcache.Cache();
 

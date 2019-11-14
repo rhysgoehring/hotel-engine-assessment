@@ -16,7 +16,7 @@ app.post('/api/search', memoryCacheMiddleware, async (req, res) => {
     const { items } = result.data;
     response = items;
   } catch (e) {
-    response = { error: "No repositories found" };
+    response = { error: 'No repositories found' };
   }
   return res.json(response);
 });
