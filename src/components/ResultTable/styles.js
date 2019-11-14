@@ -23,12 +23,24 @@ const SortButton = styled.button`
 `;
 
 const TableHeaderRow = styled.tr`
+  border-bottom: 2px solid darkslategrey;
+  padding: 2.5rem 2.5rem;
+  vertical-align: middle;
+`;
+
+const TableRow = styled.tr`
   border-bottom: 1px solid darkslategrey;
+`;
+
+const LeftAlignedCell = styled.td`
+  text-align: left;
 `;
 
 export {
   TableContainer,
   Table,
   SortButton,
-  TableHeaderRow
+  TableHeaderRow,
+  TableRow,
+  LeftAlignedCell,
 }

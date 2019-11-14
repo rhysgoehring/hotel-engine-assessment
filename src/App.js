@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import SearchBar from './components/SearchBar/index';
 import ResultTable from './components/ResultTable/index';
+import { TableRow, LeftAlignedCell } from './components/ResultTable/styles';
 
 const Header = styled.header`
   text-align: center;
@@ -16,7 +17,6 @@ const Header = styled.header`
 const Heading = styled.h1`
   font-size: 2.5rem;
 `;
-
 
 function App() {
   const [query, setQuery] = useState('');
@@ -38,14 +38,14 @@ function App() {
 
   const renderTableData = () => {
     return repos && repos.map(repo => (
-    <tr key={repo.id}>
-      <td>{repo.name}</td>
-      <td>{repo.score}</td>
-      <td>{repo.stargazers_count}</td>
-      <td>{repo.language}</td>
+    <TableRow key={repo.id}>
+      <LeftAlignedCell>{repo.name}</LeftAlignedCell>
+      <LeftAlignedCell>{(repo.score).toFixed(2)}</LeftAlignedCell>
+      <LeftAlignedCell>{repo.stargazers_count}</LeftAlignedCell>
+      <LeftAlignedCell>{repo.language}</LeftAlignedCell>
       <td>{repo.owner.login}</td>
-      <td>{repo.description}</td>
-    </tr>
+      <LeftAlignedCell>{repo.description}</LeftAlignedCell>
+    </TableRow>
     ));
   }
 
