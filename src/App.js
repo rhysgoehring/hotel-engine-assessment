@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import SearchBar from './components/SearchBar/index';
-import ResultTable from './components/ResultTable';
+import ResultTable from './components/ResultTable/index';
 
 const Header = styled.header`
   text-align: center;
