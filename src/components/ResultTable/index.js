@@ -2,7 +2,6 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { TableContainer, Table, SortButton, TableHeaderRow, MinWidthTableHeader } from './styles';
 
-
 const ResultTable = ({ tableData, sortBy }) => {
   return (
     <TableContainer>
