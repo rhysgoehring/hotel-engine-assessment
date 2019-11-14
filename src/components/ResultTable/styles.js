@@ -13,7 +13,6 @@ const Table = styled.table`
   margin: 0.75rem;
   padding: 0.5rem 0.5rem;
   font-family: 'Helvetica Neue';
-  /* font-size: 1.5rem; */
 `;
 
 const SortButton = styled.button`
@@ -41,6 +40,7 @@ const MinWidthTableHeader = styled.th`
   min-width: 100px;
   text-align: left;
   padding: 1rem 1rem;
+  vertical-align: middle;
 `;
 
 export {
